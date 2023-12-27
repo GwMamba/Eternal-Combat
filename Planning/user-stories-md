@@ -1,0 +1,89 @@
+# App name
+Eternal combat
+
+# Description of App: 
+
+# Tech stack: 
+-Phaser.js
+-HTML
+
+
+# Target user: Fighting game fans
+
+These would be fans of games like Tekken, Street Fighter and the like.
+
+As a user who is interested in playing with their friends, and would like to play with them online and in real time.
+
+A user could also play or practice with a bot either online or offline. (TBD)
+
+There is only one type of user, and that user will assume the role of Player.
+
+Player will have the ability to choose their own name. (12)
+
+Player will have ability to choose character based on the available characters provided. (Number of characters to be determined.)
+
+Player will have multiple options in the main menu. (Single player/ PvP/ How to Play/ Leaderboard/ sound on/off)
+
+    Main Menu
+
+      Single Player - Against a bot to practice (TBD)
+
+      Player vs Player - Against other human players (Main part of the game)
+
+      How to Play - Side scroll pages displaying how Player can operate and play the game. Which inputs to use.
+
+      Leader Boards - Will be able to see the scores of previous matches
+
+      Sound on/off - To mute or unmute 
+
+Player is ready to dance:
+  In PvP:
+
+Each Player has a health bar. Player health at this point is being measure in 25% incremements. This can be decreased to 2 or 3% incremements to measure player health more accurately.                                                                      
+  Full health is Green(green),
+  3/4 health is Orange
+  50% health is Orange/red
+  25% health is Red
+  10% is dark red 
+  <5% is black
+
+Each player starts in their respective corner. 
+  P1 is Left side
+  P2 is Right side
+
+Player health is determined by hits rather than time, but if player has no health left before time is over, players is dead and game ends. 1 Round game. 
+
+Player who wins has victory announced, and options are put on screen. 
+  Screen Options
+    Main menu
+    Leaderboard
+
+Players can press esc to leave. with a pop-up options of yes to return to the main menu, or no to stay in the game.
+
+# database.
+
+
+Characters and character sprites
+
+Tables for possible database: 
+
+Scores
+-ID
+-Points
+
+player:
+-ID
+-Nickname
+
+LeaderBoard:
+-ID
+-Score
+-Nickname
+
+
+
+* Posible questions:
+can we do responsive for game
+
+
+
