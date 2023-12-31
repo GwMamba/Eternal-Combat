@@ -33,7 +33,7 @@ class Sprite {
 }
 
 const player = new Sprite({
-  psoition : {
+  position : {
     x: 0,
     y: 0
   },
