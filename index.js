@@ -31,3 +31,10 @@ const enemy = new Sprite({
 enemy.draw()
 
 console.log(player)
+
+function animate() {
+  window.requestAnimationFrame(animate)
+  console.log('go');
+}
+
+animate()
