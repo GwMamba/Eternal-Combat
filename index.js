@@ -59,6 +59,12 @@ const enemy = new Sprite({
 
 console.log(player)
 
+const keys = {
+  a: {
+    pressed: false
+  }
+}
+
 function animate() {
   window.requestAnimationFrame(animate)
   c.fillStyle = 'black'
