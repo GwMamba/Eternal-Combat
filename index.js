@@ -87,6 +87,9 @@ window.addEventListener('keyup', (event) => {
     case 'd':
       player.velocity.x = 0
       break;
+    case 'a':
+      player.velocity.x = 0
+      break;
   }
   console.log(event.key)
 })
