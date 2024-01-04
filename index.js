@@ -69,12 +69,12 @@ const keys = {
   w: {
     pressed: false
   },
-  ArrowLeft: {
-    pressed: false
-  },
   ArrowRight: {
     pressed: false
   },
+  ArrowLeft: {
+    pressed: false
+  }
 }
 
 let lastKey
@@ -87,6 +87,7 @@ function animate() {
   enemy.update()
 
   player.velocity.x = 0
+  enemy.velocity.x = 0
 
   if (keys.a.pressed && lastKey === 'a') {
     player.velocity.x = -1
