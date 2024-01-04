@@ -68,7 +68,13 @@ const keys = {
   },
   w: {
     pressed: false
-  }
+  },
+  ArrowLeft: {
+    pressed: false
+  },
+  ArrowRight: {
+    pressed: false
+  },
 }
 
 let lastKey
