@@ -106,6 +106,18 @@ window.addEventListener('keydown', (event) => {
       player.velocity.y = -10
       break;
 
+      case 'ArrowRight':
+        keys.ArrowRight.pressed = true
+        enemy.lastKey = 'ArrowRight'
+        break;
+      case 'ArrowLeft':
+        keys.ArrowLeft.pressed = true
+        enemy.lastKey = 'ArrowLeft'
+        break;
+      case 'ArrowUp':
+        player.velocity.y = -10
+        break;
+
   }
   console.log(event.key)
 })
