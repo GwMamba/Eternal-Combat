@@ -87,6 +87,14 @@ function animate() {
   } else if (keys.d.pressed && lastKey === 'd') {
     player.velocity.x = 1
   }
+
+  if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
+    enemy.velocity.x = -1
+  } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
+    enemy.player.velocity.x = 1
+  }
+
+
 }
 
 animate()
