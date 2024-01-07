@@ -118,6 +118,15 @@ const keys = {
   }
 }
 
+function rectangularCollision({rectangle1, rectnagle2}) {
+  return (
+    rectangle1.attackBox.position.x + rectangle1.attackBox.width >= rectnagle2.position.x &&
+    rectangle1.attackBox.x <= rectnagle2.position.x + rectnagle2.width &&
+    rectangle1.attackBox.position.y + rectangle1.attackBox.height >= rectnagle2.position.y &&
+    rectangle1.attackBox.position.y <= rectnagle2.position.y + rectnagle2.height
+  )
+
+}
 function animate() {
   window.requestAnimationFrame(animate)
   c.fillStyle = 'black'
@@ -142,10 +151,10 @@ function animate() {
 
   //detect collision
   if (
-    player.attackBox.position.x + player.attackBox.width >= enemy.position.x &&
-    player.attackBox.x <= enemy.position.x + enemy.width &&
-    player.attackBox.position.y + player.attackBox.height >= enemy.position.y &&
-    player.attackBox.position.y <= enemy.position.y + enemy.height &&
+    rectangularCollision({
+      rectangle1: player,
+      rectnagle2: enemy
+    }) &&
     player.isAttacking
   ) { 
     player.isAttacking = false
