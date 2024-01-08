@@ -158,7 +158,7 @@ function animate() {
     player.isAttacking
   ) { 
     player.isAttacking = false
-    console.log ('go')
+    console.log ('player attacks')
   }
 
   if (
@@ -209,7 +209,6 @@ window.addEventListener('keydown', (event) => {
       break;
   }
 })
-
 
 window.addEventListener('keyup', (event) => {
   switch (event.key) {
