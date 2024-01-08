@@ -158,7 +158,7 @@ function animate() {
     player.isAttacking
   ) { 
     player.isAttacking = false
-    console.log ('player attacks')
+    console.log ('go')
   }
 
   if (
