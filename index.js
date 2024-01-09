@@ -138,9 +138,13 @@ function decreaseTimer() {
     document.querySelector("#timer").innerHTML = timer;
   }
 
-  if (player.health == enemy.health) {
-    document.querySelector("#displayText").innerHTML = "Tie";
-    document.querySelector("#displayText").style.display = "flex";
+  if (timer == 0) {
+    if (player.health == enemy.health) {
+      document.querySelector("#displayText").innerHTML = "Tie";
+      document.querySelector("#displayText").style.display = "flex";
+    } else if (player.health > enemy.health) {
+      
+    }
   }
 }
 
