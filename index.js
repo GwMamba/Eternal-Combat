@@ -139,7 +139,7 @@ function decreaseTimer() {
   }
 
   if (player.health == enemy.health) {
-    console.log("tie");
+    document.querySelector("#displayText").innerHTML = "Tie";
   }
 }
 
