@@ -136,6 +136,11 @@ function decreaseTimer() {
     timer--
     document.querySelector('#timer').innerHTML = timer
   }
+
+  if (player.health == enemy.health) {
+    console.log('tie')
+    }
+
 }
 
 decreaseTimer()
