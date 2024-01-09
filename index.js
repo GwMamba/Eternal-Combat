@@ -145,7 +145,7 @@ let timer = 60;
 let timeId
 function decreaseTimer() {
   if (timer > 0) {
-    setTimeout(decreaseTimer, 1000);
+    timeId = setTimeout(decreaseTimer, 1000);
     timer--
     document.querySelector("#timer").innerHTML = timer;
   }
