@@ -134,15 +134,13 @@ let timer = 5;
 function decreaseTimer() {
   if (timer > 0) {
     setTimeout(decreaseTimer, 1000);
-    timer--;
+    timer--
     document.querySelector("#timer").innerHTML = timer;
   }
-  
-  if (timer == 0) {
-    if (player.health == enemy.health) {
-      document.querySelector("#displayText").innerHTML = "Tie";
-      document.querySelector("#displayText").style.display = "flex";
-    }
+
+  if (player.health == enemy.health) {
+    document.querySelector("#displayText").innerHTML = "Tie";
+    document.querySelector("#displayText").style.display = "flex";
   }
 }
 
