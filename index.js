@@ -130,6 +130,10 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
+function determineWinner({}){
+  
+}
+
 let timer = 60;
 function decreaseTimer() {
   if (timer > 0) {
@@ -213,7 +217,7 @@ function animate() {
     } else if (player.health < enemy.health) {
       document.querySelector("#displayText").innerHTML = "Player 2 Wins";
     }
-  }
+  } 
 }
 
 animate();
