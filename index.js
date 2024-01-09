@@ -201,6 +201,9 @@ function animate() {
     player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
+
+  // end game based on health
+  
 }
 
 animate();
