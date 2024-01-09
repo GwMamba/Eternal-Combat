@@ -130,7 +130,7 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
-function determineWinner({player, enemy}){
+function determineWinner({player, enemy, timeId}){
   document.querySelector("#displayText").style.display = "flex";
   if (player.health == enemy.health) {
     document.querySelector("#displayText").innerHTML = "Tie";
