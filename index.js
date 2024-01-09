@@ -182,7 +182,6 @@ function animate() {
 animate()
 
 window.addEventListener('keydown', (event) => {
-  console.log(event.key);
   switch (event.key) {
     case 'd':
       keys.d.pressed = true
@@ -210,7 +209,7 @@ window.addEventListener('keydown', (event) => {
       enemy.velocity.y = -20
       break;
     case 'ArrowDown':
-      enemy.isAttacking = true
+      enemy.attack()
       break;
   }
 })
