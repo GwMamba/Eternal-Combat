@@ -145,6 +145,8 @@ function decreaseTimer() {
       document.querySelector("#displayText").innerHTML = "Tie";
     } else if (player.health > enemy.health) {
       document.querySelector("#displayText").innerHTML = "Player 1 Wins";
+    } else if (player.health < enemy.health) {
+      document.querySelector("#displayText").innerHTML = "Player 2 Wins";
     }
   }
 }
@@ -232,7 +234,7 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -20;
       break;
     case "ArrowDown":
-      enemy.isAttacking = true;
+      enemy.attack()
       break;
   }
 });
