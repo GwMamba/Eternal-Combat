@@ -10,7 +10,20 @@ class Sprite {
   }
 
   draw() {
-    c.drawImage(this.image, this.position.x, this.position.y, this.image.width * this.scale, this.image.height * this.scale)
+    c.drawImage(
+      this.image, 
+      0,
+      0,
+
+      //crop the image by how many frames
+      this.image.width / 6,
+      this.image.height,
+
+
+      this.position.x, 
+      this.position.y, 
+      (this.image.width / 6) * this.scale, 
+      this.image.height * this.scale)
   }
 
   update() {
