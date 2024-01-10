@@ -8,6 +8,8 @@ class Sprite {
     this.scale = scale;
     this.framesMax = framesMax;
     this.framesCurrent = 0
+    this.framesElapsed = 0
+    this.framesHold = 10
   }
 
   draw() {
@@ -29,10 +31,14 @@ class Sprite {
 
   update() {
     this.draw();
-    if (this.framesCurrent < this.framesMax - 1) {
+    this.framesElapsed++
+    //slows down the animation
+    if (this.framesElapsed % this.framesHold === 0) {
+      if (this.framesCurrent < this.framesMax - 1) {
       this.framesCurrent++
-    } else {
-      this.framesCurrent = 0
+      } else {
+        this.framesCurrent = 0
+      }
     }
   }
 }
