@@ -6,13 +6,14 @@ class Sprite {
     this.image = new Image();
     this.image.src = imageSrc;
     this.scale = scale;
-    this.framesMax = framesMax
+    this.framesMax = framesMax;
+    this.framesCurrent = 0
   }
 
   draw() {
     c.drawImage(
       this.image, 
-      0,
+      this.framesCurrent * (this.image.width / this.framesMax),
       0,
 
       //crop the image by how many frames
@@ -28,6 +29,11 @@ class Sprite {
 
   update() {
     this.draw();
+    if (this.framesCurrent < this.framesMax) {
+      this.framesCurrent++
+    } else {
+      this.framesCurrent = 0
+    }
   }
 }
 
