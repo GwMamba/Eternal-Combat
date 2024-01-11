@@ -45,6 +45,20 @@ const player = new Fighter({
   offset : {
     x: -20,
     y: 30
+  },
+  sprites : {
+    idle: {
+      imageSrc: './assets/sarkov/sarkov.idle.png',
+      framesMax: 2,
+    },
+    run: {
+      imageSrc: './assets/sarkov/sarkov.run.png',
+      framesMax: 3,
+    },
+    jump: {
+      imageSrc: './assets/sarkov/sarkov.jump.png',
+      framesMax: 1,
+    }
   }
 });
 
@@ -93,15 +107,23 @@ function animate() {
   background.update();
   shop.update();
   player.update();
-  enemy.update();
+  // enemy.update();
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
 
+  player.image = player.sprites.idle.image
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
+    player.image = player.sprites.run.image
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5;
+    player.image = player.sprites.run.image
+  }
+
+  if (player.velocity.y < 0) {
+    player.image = player.sprites.jump.image
+    player.framesMax = player.sprites.jump.framesMax
   }
 
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
