@@ -35,21 +35,18 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  offset: {
-    x: 0,
-    y: 0,
-  },
   imageSrc: './assets/sarkov/sarkov.idle.png',
   framesMax: 2,
-  scale: 1.5,
+  scale: 1.2,
   offset : {
     x: -20,
-    y: 30
+    y: 0
   },
   sprites : {
     idle: {
       imageSrc: './assets/sarkov/sarkov.idle.png',
       framesMax: 2,
+      
     },
     run: {
       imageSrc: './assets/sarkov/sarkov.run.png',
@@ -65,7 +62,7 @@ const player = new Fighter({
     },
     attack : {
       imageSrc: './assets/sarkov/sarkov.attack.png',
-      framesMax: 2,
+      framesMax: 3,
     }
     
   }
