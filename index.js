@@ -58,7 +58,16 @@ const player = new Fighter({
     jump: {
       imageSrc: './assets/sarkov/sarkov.jump.png',
       framesMax: 1,
+    },
+    fall : {
+      imageSrc: './assets/sarkov/sarkov.fall.png',
+      framesMax: 1,
+    },
+    attack : {
+      imageSrc: './assets/sarkov/sarkov.attack.png',
+      framesMax: 2,
     }
+    
   }
 });
 
@@ -122,8 +131,11 @@ function animate() {
     player.switchSprite('idle')
   }
 
+  //jumping
   if (player.velocity.y < 0) {
     player.switchSprite('jump')
+  } else if (player.velocity.y > 0) {
+    player.switchSprite('fall')
   }
 
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
