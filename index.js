@@ -39,6 +39,9 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
+  imageSrc: './assets/sarkov/sarkov.idle.png',
+  framesMax: 2,
+  scale: 1.5,
 });
 
 const enemy = new Fighter({
