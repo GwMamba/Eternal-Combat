@@ -82,6 +82,37 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
+  imageSrc: './assets/redman/redman.idle.png',
+  framesMax: 2,
+  scale: 1.2,
+  offset : {
+    x: -20,
+    y: 0
+  },
+  sprites : {
+    idle: {
+      imageSrc: './assets/redman/redman.idle.png',
+      framesMax: 2,
+      
+    },
+    run: {
+      imageSrc: './assets/redman/redman.run.png',
+      framesMax: 4,
+    },
+    jump: {
+      imageSrc: './assets/redman/redman.jump.png',
+      framesMax: 1,
+    },
+    fall : {
+      imageSrc: './assets/redman/redman.fall.png',
+      framesMax: 1,
+    },
+    attack : {
+      imageSrc: './assets/redman/redman.attack.png',
+      framesMax: 2,
+    }
+    
+  }
 });
 
 console.log(player);
@@ -113,7 +144,7 @@ function animate() {
   background.update();
   shop.update();
   player.update();
-  // enemy.update();
+  enemy.update();
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
