@@ -28,8 +28,7 @@ class Sprite {
       this.image.height * this.scale)
   }
 
-  update() {
-    this.draw();
+  animateFrames() {
     this.framesElapsed++
     //slows down the animation
     if (this.framesElapsed % this.framesHold === 0) {
@@ -39,6 +38,11 @@ class Sprite {
         this.framesCurrent = 0
       }
     }
+  }
+
+  update() {
+    this.draw();
+    this.animateFrames()
   }
 }
 
@@ -75,6 +79,7 @@ class Fighter extends Sprite {
 
   update() {
     this.draw();
+    this.animateFrames()
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
     this.attackBox.position.y = this.position.y;
 
