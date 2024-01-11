@@ -11,6 +11,7 @@ class Sprite {
     this.framesElapsed = 0
     this.framesHold = 10
     this.offset = offset
+    this.isMirrored = false; 
   }
 
   draw() {

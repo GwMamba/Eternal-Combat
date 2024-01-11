@@ -82,6 +82,9 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
+
+  isMirrored: true,
+
   imageSrc: './assets/redman/redman.idle.png',
   framesMax: 2,
   scale: 1.2,
@@ -114,6 +117,7 @@ const enemy = new Fighter({
     
   }
 });
+
 
 console.log(player);
 
