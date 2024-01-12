@@ -37,8 +37,39 @@ const player = new Fighter({
   },
   offset: {
     x: 0,
-    y: 0,
+    y: 0
   },
+  imageSrc: './assets/sarkov/sarkov.idle.png',
+  framesMax: 2,
+  scale: 1.2,
+  offset : {
+    x: -20,
+    y: 0
+  },
+  sprites : {
+    idle: {
+      imageSrc: './assets/sarkov/sarkov.idle.png',
+      framesMax: 2,
+      
+    },
+    run: {
+      imageSrc: './assets/sarkov/sarkov.run.png',
+      framesMax: 3,
+    },
+    jump: {
+      imageSrc: './assets/sarkov/sarkov.jump.png',
+      framesMax: 1,
+    },
+    fall : {
+      imageSrc: './assets/sarkov/sarkov.fall.png',
+      framesMax: 1,
+    },
+    attack : {
+      imageSrc: './assets/sarkov/sarkov.attack.png',
+      framesMax: 3,
+    }
+    
+  }
 });
 
 const enemy = new Fighter({
@@ -50,14 +81,44 @@ const enemy = new Fighter({
     x: 0,
     y: 0,
   },
-  color: "blue",
-  offset: {
+  offset : {
     x: -50,
-    y: 0,
+    y: 0
   },
+
+  imageSrc: './assets/redman/redman.idle.png',
+  framesMax: 2,
+  scale: 1.2,
+  offset : {
+    x: -20,
+    y: 0
+  },
+  sprites : {
+    idle: {
+      imageSrc: './assets/redman/redman.idle.png',
+      framesMax: 2,
+      
+    },
+    run: {
+      imageSrc: './assets/redman/redman.run.png',
+      framesMax: 4,
+    },
+    jump: {
+      imageSrc: './assets/redman/redman.jump.png',
+      framesMax: 1,
+    },
+    fall : {
+      imageSrc: './assets/redman/redman.fall.png',
+      framesMax: 1,
+    },
+    attack : {
+      imageSrc: './assets/redman/redman.attack.png',
+      framesMax: 3,
+    }
+    
+  }
 });
 
-console.log(player);
 
 const keys = {
   a: {
@@ -90,17 +151,40 @@ function animate() {
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
-
+  
+  //movements for player 1
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
+    player.switchSprite('run')
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5;
+    player.switchSprite('run')
+  } else {
+    player.switchSprite('idle')
   }
 
+  //jumping for player1
+  if (player.velocity.y < 0) {
+    player.switchSprite('jump')
+  } else if (player.velocity.y > 0) {
+    player.switchSprite('fall')
+  }
+ //movements for player 2
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -5;
+    enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 5;
+    enemy.switchSprite('run')
+  } else {
+    enemy.switchSprite('idle')
+  }
+
+  //jumping for player2
+  if (enemy.velocity.y < 0) {
+    enemy.switchSprite('jump')
+  } else if (enemy.velocity.y > 0) {
+    enemy.switchSprite('fall')
   }
 
   //detect collision
