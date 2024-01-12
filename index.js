@@ -127,10 +127,10 @@ const enemy = new Fighter({
   },
   attackBox: {
     offset: {
-     x: 0,
-     y: 0  
+     x: -165,
+     y: 50  
     },
-    width: 100,
+    width: 170,
     height: 50,
   },
 });
@@ -217,7 +217,9 @@ function animate() {
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 
-  if (player.isAttacking && player.framesCurrent === 2) {
+  // if player misses attack
+  if (player.isAttacking && 
+    player.framesCurrent === 2) {
     player.isAttacking = false;
   }
 
@@ -226,12 +228,16 @@ function animate() {
       rectangle1: enemy,
       rectangle2: player,
     }) &&
-    enemy.isAttacking
+    enemy.isAttacking && enemy.framesCurrent === 2
   ) {
     enemy.isAttacking = false;
     console.log("enemy attacks");
     player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
+  }
+
+  if (enemy.isAttacking && enemy.framesCurrent === 4) {
+    enemy.isAttacking = false;
   }
 
   // end game based on health

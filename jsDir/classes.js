@@ -101,7 +101,7 @@ class Fighter extends Sprite {
     this.position.y += this.velocity.y;
     this.position.x += this.velocity.x;
 
-    c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+//    c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
     //to stop our sprites from falling downwards out the canvas
     if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {
