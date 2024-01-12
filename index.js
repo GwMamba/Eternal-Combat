@@ -209,12 +209,16 @@ function animate() {
       rectangle1: player,
       rectangle2: enemy,
     }) &&
-    player.isAttacking
+    player.isAttacking && player.framesCurrent === 1
   ) {
     player.isAttacking = false;
     console.log("go");
     enemy.health -= 10;
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+  }
+
+  if (player.isAttacking && player.framesCurrent === 2) {
+    player.isAttacking = false;
   }
 
   if (
