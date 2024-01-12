@@ -35,6 +35,10 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
+  offset: {
+    x: 0,
+    y: 0
+  },
   imageSrc: './assets/sarkov/sarkov.idle.png',
   framesMax: 2,
   scale: 1.2,
@@ -77,13 +81,10 @@ const enemy = new Fighter({
     x: 0,
     y: 0,
   },
-  color: "blue",
-  offset: {
+  offset : {
     x: -50,
-    y: 0,
+    y: 0
   },
-
-  isMirrored: true,
 
   imageSrc: './assets/redman/redman.idle.png',
   framesMax: 2,
@@ -112,14 +113,12 @@ const enemy = new Fighter({
     },
     attack : {
       imageSrc: './assets/redman/redman.attack.png',
-      framesMax: 2,
+      framesMax: 3,
     }
     
   }
 });
 
-
-console.log(player);
 
 const keys = {
   a: {
@@ -153,6 +152,7 @@ function animate() {
   player.velocity.x = 0;
   enemy.velocity.x = 0;
   
+  //movements for player 1
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
     player.switchSprite('run')
@@ -163,17 +163,28 @@ function animate() {
     player.switchSprite('idle')
   }
 
-  //jumping
+  //jumping for player1
   if (player.velocity.y < 0) {
     player.switchSprite('jump')
   } else if (player.velocity.y > 0) {
     player.switchSprite('fall')
   }
-
+ //movements for player 2
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -5;
+    enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 5;
+    enemy.switchSprite('run')
+  } else {
+    enemy.switchSprite('idle')
+  }
+
+  //jumping for player2
+  if (enemy.velocity.y < 0) {
+    enemy.switchSprite('jump')
+  } else if (enemy.velocity.y > 0) {
+    enemy.switchSprite('fall')
   }
 
   //detect collision
