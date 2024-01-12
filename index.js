@@ -69,7 +69,15 @@ const player = new Fighter({
       framesMax: 3,
     }
     
-  }
+  },
+  attackBox: {
+    offset: {
+     x: 0,
+     y: 0  
+    },
+    width: 100,
+    height: 50,
+  },
 });
 
 const enemy = new Fighter({
@@ -116,7 +124,15 @@ const enemy = new Fighter({
       framesMax: 3,
     }
     
-  }
+  },
+  attackBox: {
+    offset: {
+     x: 0,
+     y: 0  
+    },
+    width: 100,
+    height: 50,
+  },
 });
 
 
