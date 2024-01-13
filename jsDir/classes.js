@@ -54,6 +54,7 @@ class Fighter extends Sprite {
     imageSrc, scale = 1, 
     framesMax = 1, 
     offset = {x: 0, y: 0},
+
     sprites
   }) {
     super({
@@ -72,6 +73,7 @@ class Fighter extends Sprite {
         x: this.position.x,
         y: this.position.y,
       },
+      
       offset,
       width: 100,
       height: 50,
