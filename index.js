@@ -243,6 +243,7 @@ function animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
+  if (!player.dead) {
   switch (event.key) {
     case "d":
       keys.d.pressed = true;
@@ -258,6 +259,10 @@ window.addEventListener('keydown', (event) => {
     case " ":
       player.attack();
       break;
+  }
+}
+  if (!enemy.dead) {
+  switch(event.key){
     case "ArrowRight":
       keys.ArrowRight.pressed = true;
       enemy.lastKey = "ArrowRight";
@@ -273,6 +278,8 @@ window.addEventListener('keydown', (event) => {
       enemy.attack()
       break;
   }
+}
+
 });
 
 window.addEventListener("keyup", (event) => {
