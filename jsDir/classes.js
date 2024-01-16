@@ -115,6 +115,13 @@ class Fighter extends Sprite {
     }, 100);
   }
 
+  takeHit() {
+    this.switchSprite('takeHit')
+    setTimeout(() => {
+      this.switchSprite('idle')
+    }, 1000);
+  }
+
   switchSprite(sprite) {
     if (
       this.image === this.sprites.attack.image && this.framesCurrent < this.sprites.attack.framesMax - 1)
