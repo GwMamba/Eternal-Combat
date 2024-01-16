@@ -214,11 +214,10 @@ function animate() {
       rectangle1: enemy,
       rectangle2: player,
     }) &&
-    enemy.isAttacking
+    enemy.isAttacking && enemy.framesCurrent === 2
   ) {
+    player.takeHit();
     enemy.isAttacking = false;
-    console.log("enemy attacks");
-    player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 
