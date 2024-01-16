@@ -69,15 +69,7 @@ const player = new Fighter({
       framesMax: 3,
     }
     
-  },
-  attackBox: {
-    offset: {
-     x: 100,
-     y: 50  
-    },
-    width: 160,
-    height: 50,
-  },
+  }
 });
 
 const enemy = new Fighter({
@@ -124,15 +116,7 @@ const enemy = new Fighter({
       framesMax: 3,
     }
     
-  },
-  attackBox: {
-    offset: {
-     x: -165,
-     y: 50  
-    },
-    width: 170,
-    height: 50,
-  },
+  }
 });
 
 
@@ -209,7 +193,7 @@ function animate() {
       rectangle1: player,
       rectangle2: enemy,
     }) &&
-    player.isAttacking && player.framesCurrent === 1
+    player.isAttacking
   ) {
     player.isAttacking = false;
     console.log("go");
@@ -217,27 +201,17 @@ function animate() {
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 
-  // if player misses attack
-  if (player.isAttacking && 
-    player.framesCurrent === 2) {
-    player.isAttacking = false;
-  }
-
   if (
     rectangularCollision({
       rectangle1: enemy,
       rectangle2: player,
     }) &&
-    enemy.isAttacking && enemy.framesCurrent === 2
+    enemy.isAttacking
   ) {
     enemy.isAttacking = false;
     console.log("enemy attacks");
     player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
-  }
-
-  if (enemy.isAttacking && enemy.framesCurrent === 4) {
-    enemy.isAttacking = false;
   }
 
   // end game based on health
