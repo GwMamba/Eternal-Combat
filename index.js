@@ -67,6 +67,10 @@ const player = new Fighter({
     attack : {
       imageSrc: './assets/sarkov/sarkov.attack.png',
       framesMax: 3,
+    },
+    takeHit : {
+      imageSrc: './assets/sarkov/sarkov.takehit.png',
+      framesMax: 2,
     }
     
   }
