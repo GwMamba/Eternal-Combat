@@ -71,6 +71,10 @@ const player = new Fighter({
     takeHit : {
       imageSrc: './assets/sarkov/sarkov.takehit.png',
       framesMax: 2,
+    },
+    death : {
+      imageSrc: './assets/redman/sarkov.dead.png',
+      framesMax: 6,
     }
     
   }
@@ -122,6 +126,14 @@ const enemy = new Fighter({
     takeHit : {
       imageSrc: './assets/redman/redman.takehit.png',
       framesMax: 2,
+    },
+    takeHit : {
+      imageSrc: './assets/redman/redman.takehit.png',
+      framesMax: 2,
+    },
+    death : {
+      imageSrc: './assets/redman/redman.dead.png',
+      framesMax: 5,
     }
   }
 });
