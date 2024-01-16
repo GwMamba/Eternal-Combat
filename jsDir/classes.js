@@ -54,8 +54,7 @@ class Fighter extends Sprite {
     imageSrc, scale = 1, 
     framesMax = 1, 
     offset = {x: 0, y: 0},
-    sprites,
-    attackBox = {offset: {}, width: undefined, height: undefined }
+    sprites
   }) {
     super({
       position,
@@ -73,9 +72,9 @@ class Fighter extends Sprite {
         x: this.position.x,
         y: this.position.y,
       },
-      offset: attackBox.offset,
-      width: attackBox.width,
-      height: attackBox.height,
+      offset,
+      width: 100,
+      height: 50,
     };
     this.color = color;
     this.isAttacking;
@@ -96,12 +95,10 @@ class Fighter extends Sprite {
     this.draw();
     this.animateFrames()
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
-    this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
+    this.attackBox.position.y = this.position.y;
 
     this.position.y += this.velocity.y;
     this.position.x += this.velocity.x;
-
-//    c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
     //to stop our sprites from falling downwards out the canvas
     if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {
@@ -113,6 +110,9 @@ class Fighter extends Sprite {
   attack() {
     this.switchSprite('attack')
     this.isAttacking = true;
+    setTimeout(() => {
+      this.isAttacking = false;
+    }, 100);
   }
 
   switchSprite(sprite) {
