@@ -215,7 +215,7 @@ function animate() {
   ) {
     enemy.takeHit()
     player.isAttacking = false;
-    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+    gsap.to("#enemyHealth", {width: enemy.health + "%"})
   }
 
   if (
@@ -227,7 +227,7 @@ function animate() {
   ) {
     player.takeHit()
     enemy.isAttacking = false;
-    document.querySelector("#playerHealth").style.width = player.health + "%";
+    gsap.to("#playerHealth", {width: player.health + "%"})
   }
 
   // end game based on health
