@@ -116,10 +116,7 @@ class Fighter extends Sprite {
   }
 
   takeHit() {
-    this.switchSprite('takeHit')
-    setTimeout(() => {
-      this.switchSprite('idle')
-    }, 1000);
+    this.health -= 10;
   }
 
   switchSprite(sprite) {
