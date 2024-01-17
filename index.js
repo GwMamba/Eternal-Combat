@@ -67,6 +67,14 @@ const player = new Fighter({
     attack : {
       imageSrc: './assets/sarkov/sarkov.attack.png',
       framesMax: 3,
+    },
+    takeHit : {
+      imageSrc: './assets/sarkov/sarkov.takehit.png',
+      framesMax: 3,
+    },
+    death : {
+      imageSrc: './assets/sarkov/sarkov.dead.png',
+      framesMax: 6,
     }
     
   }
@@ -114,8 +122,15 @@ const enemy = new Fighter({
     attack : {
       imageSrc: './assets/redman/redman.attack.png',
       framesMax: 3,
+    },
+    takeHit : {
+      imageSrc: './assets/redman/redman.takehit.png',
+      framesMax: 3,
+    },
+    death : {
+      imageSrc: './assets/redman/redman.dead.png',
+      framesMax: 5,
     }
-    
   }
 });
 
@@ -187,7 +202,7 @@ function animate() {
     enemy.switchSprite('fall')
   }
 
-  //detect collision
+  //detect collision and enemy gets hit
   if (
     rectangularCollision({
       rectangle1: player,
@@ -195,9 +210,8 @@ function animate() {
     }) &&
     player.isAttacking
   ) {
+    enemy.takeHit()
     player.isAttacking = false;
-    console.log("go");
-    enemy.health -= 10;
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 
@@ -208,9 +222,8 @@ function animate() {
     }) &&
     enemy.isAttacking
   ) {
+    player.takeHit()
     enemy.isAttacking = false;
-    console.log("enemy attacks");
-    player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 
@@ -224,6 +237,8 @@ function animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
+  if (!player.dead) {
+
   switch (event.key) {
     case "d":
       keys.d.pressed = true;
@@ -239,6 +254,10 @@ window.addEventListener('keydown', (event) => {
     case " ":
       player.attack();
       break;
+  }
+}
+    if (!enemy.dead) {
+    switch (event.key) {
     case "ArrowRight":
       keys.ArrowRight.pressed = true;
       enemy.lastKey = "ArrowRight";
@@ -253,6 +272,7 @@ window.addEventListener('keydown', (event) => {
     case 'ArrowDown':
       enemy.attack()
       break;
+    }
   }
 });
 
