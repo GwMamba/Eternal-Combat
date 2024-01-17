@@ -71,6 +71,10 @@ const player = new Fighter({
     takeHit : {
       imageSrc: './assets/sarkov/sarkov.takehit.png',
       framesMax: 3,
+    },
+    death : {
+      imageSrc: './assets/sarkov/sarkov.dead.png',
+      framesMax: 6,
     }
     
   }
@@ -122,6 +126,10 @@ const enemy = new Fighter({
     takeHit : {
       imageSrc: './assets/redman/redman.takehit.png',
       framesMax: 3,
+    },
+    death : {
+      imageSrc: './assets/redman/redman.dead.png',
+      framesMax: 5,
     }
   }
 });
@@ -229,6 +237,7 @@ function animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
+  
   switch (event.key) {
     case "d":
       keys.d.pressed = true;
