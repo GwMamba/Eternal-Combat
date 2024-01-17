@@ -69,8 +69,8 @@ const player = new Fighter({
       framesMax: 3,
     },
     takeHit : {
-      imageSrc: './assets/redman/sarkov.takehit.png',
-      framesMax: 2,
+      imageSrc: './assets/sarkov/sarkov.takehit.png',
+      framesMax: 3,
     }
     
   }
@@ -121,7 +121,7 @@ const enemy = new Fighter({
     },
     takeHit : {
       imageSrc: './assets/redman/redman.takehit.png',
-      framesMax: 2,
+      framesMax: 3,
     }
   }
 });
@@ -214,9 +214,8 @@ function animate() {
     }) &&
     enemy.isAttacking
   ) {
+    player.takeHit()
     enemy.isAttacking = false;
-    console.log("enemy attacks");
-    player.health -= 10;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 

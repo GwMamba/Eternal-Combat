@@ -116,7 +116,7 @@ class Fighter extends Sprite {
   }
   takeHit(){
     this.switchSprite('takeHit')
-    this.health -= 20
+    this.health -= 10
   }
 
   switchSprite(sprite) {
@@ -127,11 +127,11 @@ class Fighter extends Sprite {
       return;
 
     //override when fighter gets hit
-    if (this.image === this.sprites.takeHit.image && this.framesCurren < this.sprites.takeHit.framesMax - 1)
+    if (this.image === this.sprites.takeHit.image && this.framesCurrent < this.sprites.takeHit.framesMax - 1)
 
       return;
 
-      
+
     switch (sprite) {
       case 'idle':
         if (this.image !== this.sprites.idle.image) {
