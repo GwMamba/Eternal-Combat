@@ -67,6 +67,10 @@ const player = new Fighter({
     attack : {
       imageSrc: './assets/sarkov/sarkov.attack.png',
       framesMax: 3,
+    },
+    takeHit : {
+      imageSrc: './assets/redman/sarkov.takehit.png',
+      framesMax: 2,
     }
     
   }
@@ -114,8 +118,11 @@ const enemy = new Fighter({
     attack : {
       imageSrc: './assets/redman/redman.attack.png',
       framesMax: 3,
+    },
+    takeHit : {
+      imageSrc: './assets/redman/redman.takehit.png',
+      framesMax: 2,
     }
-    
   }
 });
 
@@ -187,7 +194,7 @@ function animate() {
     enemy.switchSprite('fall')
   }
 
-  //detect collision
+  //detect collision and enemy gets hit
   if (
     rectangularCollision({
       rectangle1: player,
@@ -195,9 +202,8 @@ function animate() {
     }) &&
     player.isAttacking
   ) {
+    enemy.takeHit()
     player.isAttacking = false;
-    console.log("go");
-    enemy.health -= 10;
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 

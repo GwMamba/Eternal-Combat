@@ -114,13 +114,24 @@ class Fighter extends Sprite {
       this.isAttacking = false;
     }, 100);
   }
+  takeHit(){
+    this.switchSprite('takeHit')
+    this.health -= 20
+  }
 
   switchSprite(sprite) {
+    //overriding all other animations with attack
     if (
       this.image === this.sprites.attack.image && this.framesCurrent < this.sprites.attack.framesMax - 1)
 
       return;
 
+    //override when fighter gets hit
+    if (this.image === this.sprites.takeHit.image && this.framesCurren < this.sprites.takeHit.framesMax - 1)
+
+      return;
+
+      
     switch (sprite) {
       case 'idle':
         if (this.image !== this.sprites.idle.image) {
@@ -157,6 +168,13 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
         break;
         }
+        case 'takeHit':
+          if (this.image !== this.sprites.takeHit.image) {
+            this.image = this.sprites.takeHit.image
+            this.framesMax = this.sprites.takeHit.framesMax
+            this.framesCurrent = 0
+          break;
+          }
     }
   }
 }
