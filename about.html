@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <script src="https://kit.fontawesome.com/9309a042d1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="/assets/Logo/logo-white.png" alt="Logo">
+    </a>
+    <nav class="navbar">
+      <a href="about.html">Home</a>
+      <a href="game.html">Let's Fight</a>
+     
+    </nav>
+  </header>
+  
+    <div class="card" data-tilt data-tilt-scale="1.1">
+    <div class="card-image"></div>
+    <div class="card-text">
+      <h2>Gerald W. Mwangi</h2>
+      <p>A polyglot, amateur pilot, and globetrotter. With a background in Aircraft Computers and Electronics engineering, he is eager to grow his web-dev skills. Simply put, no challenge is too big for him to handle.</p>
+    </div>
+    <div class="card-stats">
+      <a href="https://github.com/GwMamba" class="stat" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gerald-mwangi-90720172/" class="stat border" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-tilt data-tilt-scale="1.1">
+    <div class="card-image card2"></div>
+    <div class="card-text card2">
+      <!-- <span class="date">4 days ago</span> -->
+      <h2>Giselle Refusé</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card-stats card2">
+      <a href="https://github.com/GwMamba" class="stat" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gerald-mwangi-90720172/" class="stat border" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-tilt data-tilt-scale="1.1">
+    <div class="card-image card3"></div>
+    <div class="card-text card3">
+      <!-- <span class="date">4 days ago</span> -->
+      <h2>Rony Reyes
+      </h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card-stats card3">
+      <a href="https://github.com/GwMamba" class="stat" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gerald-mwangi-90720172/" class="stat border" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+
+  <script src="vanilla-tilt.min.js"></script>
+
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+      glare: true,
+      reverse: true,
+      "max-glare": 0.5,
+      max: 25,
+      speed: 400
+    });
+  </script>
+
+</body>
+
+</html>
