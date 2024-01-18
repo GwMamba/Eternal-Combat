@@ -16,6 +16,7 @@ function determineWinner({ player, enemy, timeId }) {
 
   if (player.health == enemy.health) {
     displayTextElement.innerHTML = "Tie";
+    displayTextElement.style.color = "black";
   } else if (player.health > enemy.health) {
     displayTextElement.innerHTML = "Player 1 Wins";
     displayTextElement.style.color = "black";
