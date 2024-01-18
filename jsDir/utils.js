@@ -10,16 +10,21 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
-function determineWinner({player, enemy, timeId}){
-  clearTimeout(timeId)
-  document.querySelector("#displayText").style.display = "flex";
+function determineWinner({ player, enemy, timeId }) {
+  clearTimeout(timeId);
+  const displayTextElement = document.querySelector("#displayText");
+
   if (player.health == enemy.health) {
-    document.querySelector("#displayText").innerHTML = "Tie";
+    displayTextElement.innerHTML = "Tie";
   } else if (player.health > enemy.health) {
-    document.querySelector("#displayText").innerHTML = "Player 1 Wins";
+    displayTextElement.innerHTML = "Player 1 Wins";
+    displayTextElement.style.color = "black";
   } else if (player.health < enemy.health) {
-    document.querySelector("#displayText").innerHTML = "Player 2 Wins";
+    displayTextElement.innerHTML = "Player 2 Wins";
+    displayTextElement.style.color = "black"; 
   }
+
+  displayTextElement.style.display = "flex";
 }
 
 let timer = 60;
