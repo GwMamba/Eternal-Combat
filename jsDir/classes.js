@@ -25,7 +25,8 @@ class Sprite {
       this.position.x - this.offset.x,
       this.position.y - this.offset.y, 
       (this.image.width / this.framesMax) * this.scale, 
-      this.image.height * this.scale)
+      this.image.height * this.scale
+    )
   }
 
   animateFrames() {
