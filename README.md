@@ -12,7 +12,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Completed Features](#Completed Features)
+- [Completed Features](#CompletedFeatures)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Future Developments](#futureDevelopments)
@@ -37,11 +37,11 @@ To set up the project locally:
 1. Clone the repository:
 bash
 
-  $ git clone https://github.com/lighthouse-labs/node-skeleton
+  $ git clone https://github.com/RonyDanielReyes/Eternal-Combat
   
  2. Navigate to the Project Directory
 
-  $  cd your-project
+  $  cd Eternal-combat
 
 ```
 ## Usage
@@ -51,9 +51,9 @@ bash
 
 1. Start the Server:
 
-  $  http-server -g 
+  $  http-server
 
-2. Open Your Browser: Navigate to http://localhost:5500.
+2. Open Your Browser: Navigate to http://localhost:8080
 
 ```
 
