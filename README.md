@@ -12,7 +12,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Completed Features](#Completed Features)
+- [Completed Features](#Completed-Features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Future Developments](#futureDevelopments)
